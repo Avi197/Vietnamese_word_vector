@@ -49,20 +49,12 @@ def check_english(tags, english_keys):
             return True
 
 
-# clean up data
-# write to file_data
-# get only tags and title from raw json
-# also get rid of some bad tags
-# this one is for vnn only
-# Vnn has some tags that are irrelevant
-# e.g: vnn, vietnamnet, ...
+# check for vietnamese news
+# remove bad titles
+# write to new file
 def get_data_vnn(infile, bad_title_list, english_keys=''):
     count_line = 1
 
-    if 'json' in infile:
-        file_name = infile.replace('.json', '')
-    else:
-        file_name = infile
     with jsonlines.open(infile) as file:
         with jsonlines.open(Vnn_data, 'w') as outfile:
             for obj in file:
