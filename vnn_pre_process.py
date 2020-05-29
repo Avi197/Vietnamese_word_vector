@@ -4,6 +4,7 @@ from langdetect import detect
 import re
 import os.path
 
+
 Vnn = 'H:/Vietnamese word representations/Raw news data (no dupplicate)/word_vectors/vnn.json'
 Vnn_data = 'H:/Vietnamese word representations/Word_vector_data/Vnn/vnn_data.json'
 
@@ -11,6 +12,7 @@ vnn_bad_tags = ['vnn', 'vietnamnet', 'vietnamnetvn', 'vietnamnetvn doc bao', 'vi
                 'tin nong', 'tin moi', 'doc bao']
 vnn_english = 'news'
 vnn_bad_title = ['Những hình ảnh ấn tượng trong tuần', 'Bản tin thời sự VTV', 'http://']
+
 
 """
 Vnn has english titles, which we don't need

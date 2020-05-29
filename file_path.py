@@ -1,0 +1,1 @@
+Vnn = 'H:/Vietnamese word representations/Raw news data (no dupplicate)/word_vectors/vnn.json'
