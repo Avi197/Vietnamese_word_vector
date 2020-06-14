@@ -1,33 +1,15 @@
 import jsonlines
-import json
+from Word_vector_github import file_path
 from langdetect import detect
-import re
 import os.path
 
 
-Vnn = 'H:/Vietnamese word representations/Raw news data (no dupplicate)/word_vectors/vnn.json'
-Vnn_data = 'H:/Vietnamese word representations/Word_vector_data/Vnn/vnn_data.json'
+Vtv = file_path.Vtv
+Vtv_data = file_path.Vtv_data
 
-vnn_bad_tags = ['vnn', 'vietnamnet', 'vietnamnetvn', 'vietnamnetvn doc bao', 'vietnamnet.vn',
-                'tin nong', 'tin moi', 'doc bao']
-vnn_english = 'news'
-vnn_bad_title = ['Những hình ảnh ấn tượng trong tuần', 'Bản tin thời sự VTV', 'http://']
-
-
-"""
-Vnn has english titles, which we don't need
-some tags are irrelevant to the title, e.g: vnn, vietnamnetvn doc bao,.... which is just to mark
-the news source (???) 
-some title are just 1 general text but with lots of usable tags, remove them
-"""
-
-
-"""
-remove english news
-remove all bad tags in bad_tags list
-remove bad title
-check if len(tags)>0
-"""
+filename = os.path.dirname(Vtv_data)
+if not os.path.exists(filename):
+    os.makedirs(filename)
 
 
 # check if title is in bad_title list
@@ -54,22 +36,22 @@ def check_english(tags, english_keys):
 # check for vietnamese news
 # remove bad titles
 # write to new file
-def get_data_vnn(infile, bad_title_list, english_keys=''):
+def get_data_vtv(infile, bad_title_list='', english_keys=''):
     count_line = 1
 
-    with jsonlines.open(infile) as file:
-        with jsonlines.open(Vnn_data, 'w') as outfile:
-            for obj in file:
+    with jsonlines.open(infile) as infile:
+        with jsonlines.open(Vtv_data, 'w') as outfile:
+            for obj in infile:
                 title = obj['title']
                 if detect(title) == 'vi':
                     if not check_bad_title(obj, bad_title_list):
                         outfile.write(obj)
                 print(f'done line {count_line}')
                 count_line += 1
-            print(f'wrote to {Vnn_data}')
+            print(f'wrote to {Vtv_data}')
 
 
-get_data_vnn(Vnn, bad_title_list=vnn_bad_title)
+get_data_vtv(Vtv)
 
 
 #
@@ -119,9 +101,9 @@ get_data_vnn(Vnn, bad_title_list=vnn_bad_title)
 #         file_name = infile.replace('.json', '')
 #     else:
 #         file_name = infile
-#     with jsonlines.open(infile) as file:
+#     with jsonlines.open(infile) as infile:
 #         with jsonlines.open(f'{file_name}_no_english_{num}', 'w') as outfile:
-#             for obj in file:
+#             for obj in infile:
 #                 tags = obj['tags']
 #                 title = obj['title']
 #                 if not check_english(tags, english_keys):
@@ -144,9 +126,9 @@ get_data_vnn(Vnn, bad_title_list=vnn_bad_title)
 #         file_name = infile.replace('.json', '')
 #     else:
 #         file_name = infile
-#     with jsonlines.open(infile) as file:
+#     with jsonlines.open(infile) as infile:
 #         with jsonlines.open(f'{file_name}_vi_{num}', mode='w') as outfile:
-#             for obj in file:
+#             for obj in infile:
 #                 title = obj['title']
 #                 if detect(title) == 'vi':
 #                     outfile.write(obj)
@@ -161,9 +143,9 @@ get_data_vnn(Vnn, bad_title_list=vnn_bad_title)
 #         file_name = infile.replace('.json', '')
 #     else:
 #         file_name = infile
-#     with jsonlines.open(infile) as file:
+#     with jsonlines.open(infile) as infile:
 #         with jsonlines.open(f'{file_name}_english', mode='w') as outfile:
-#             for obj in file:
+#             for obj in infile:
 #                 title = obj['title']
 #                 if detect(title) == 'en':
 #                     outfile.write(obj)
