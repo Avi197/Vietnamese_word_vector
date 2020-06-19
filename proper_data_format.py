@@ -6,13 +6,12 @@ import time
 
 # java -Xmx2g -jar /home/pham/vncorenlp/VnCoreNLP/VnCoreNLP-1.1.1.jar -fin
 # /home/pham/news_data/news_data_no_thanhnien -fout /home/pham/news_data/news_data_tokenized -annotators wseg
-vncorenlp_file = "E:\VnCoreNLP-master\VnCoreNLP-master\VnCoreNLP-1.1.1.jar"
-# df = pd.read_json('contents.json', lines=True)
+# vncorenlp_file = "E:\VnCoreNLP-master\VnCoreNLP-master\VnCoreNLP-1.1.1.jar"
 
 # vncorenlp -Xmx2g E:\VnCoreNLP-master\VnCoreNLP-master\VnCoreNLP-1.1.1.jar -p 9000 -a "wseg"
 
-data = 'Tuoitre'
-output = data + '_data'
+# data = 'Tuoitre'
+# output = data + '_data'
 # output = 'test'
 
 
@@ -20,8 +19,8 @@ def tokenized(infile, outfile):
     count = 0
 
     with VnCoreNLP(address='http://127.0.0.1', port=9000) as vncorenlp:
-        with jsonlines.open(data + '.json') as file:
-            with open(output, 'w', encoding='utf-8') as out:
+        with jsonlines.open(infile + '.json') as file:
+            with open(outfile, 'w', encoding='utf-8') as out:
                 for obj in file:
                     # tags = obj['tags']
                     if len(obj['tags']) > 1:
@@ -61,6 +60,10 @@ def tokenized(infile, outfile):
                         out.write('\n')
                     print('done line {0}'.format(count))
                     count += 1
+
+
+tokenized()
+
 
 # for obj in file:
 #     tags = obj['tags']

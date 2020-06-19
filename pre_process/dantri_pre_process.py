@@ -5,9 +5,9 @@ from Word_vector_github import file_path
 Dantri_infile = file_path.Dantri
 Dantri_data = file_path.Dantri_data
 
-filename = os.path.dirname(Dantri_data)
-if not os.path.exists(filename):
-    os.makedirs(filename)
+# filename = os.path.dirname(Dantri_data)
+# if not os.path.exists(filename):
+#     os.makedirs(filename)
 
 
 """
