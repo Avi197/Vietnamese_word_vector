@@ -30,12 +30,12 @@ Vtv_data = 'H:/Vietnamese word representations/Word_vector_data/json data/Vtv/vt
 # Vnn_text = 'H:/Vietnamese word representations/Word_vector_data/text data/Vnn/vnn_data'
 # Vtv_text = 'H:/Vietnamese word representations/Word_vector_data/text data/Vtv/vtv_data'
 # ubuntu
-Dantri_text = '/home/pham/Vietnamese NLU/text data/Dantri/dantri_data.json'
-Thanhnien_text = '/home/pham/Vietnamese NLU/text data/Thanhnien/thanhnien_data.json'
-Tuoitre_text = '/home/pham/Vietnamese NLU/text data/Tuoitre/tuoitre_data.json'
-Vnexpress_text = '/home/pham/Vietnamese NLU/text data/Vnexpress/vnexpress_data.json'
-Vnn_text = '/home/pham/Vietnamese NLU/text data/Vnn/vnn_data.json'
-Vtv_text = '/home/pham/Vietnamese NLU/text data/Vtv/vtv_data.json'
+Dantri_text = '/home/pham/NLU/text data/Dantri/dantri_data.json'
+Thanhnien_text = '/home/pham/NLU/text data/Thanhnien/thanhnien_data.json'
+Tuoitre_text = '/home/pham/NLU/text data/Tuoitre/tuoitre_data.json'
+Vnexpress_text = '/home/pham/NLU/text data/Vnexpress/vnexpress_data.json'
+Vnn_text = '/home/pham/NLU/text data/Vnn/vnn_data.json'
+Vtv_text = '/home/pham/NLU/text data/Vtv/vtv_data.json'
 # ---------
 
 
