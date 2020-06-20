@@ -1,8 +1,3 @@
-# 1. Read embedding file
-# 2. Convert to tensorboard
-# 3. Visualize
-
-# encoding: utf-8
 import sys
 import os
 import gensim
@@ -12,6 +7,10 @@ from tensorflow.contrib.tensorboard.plugins import projector
 import logging
 from tensorboard import default
 from tensorboard import program
+from gensim.models import FastText
+
+
+model = FastText.load_fasttext_format("H:/Vietnamese word representations/result/news.bin")
 
 
 class TensorBoardTool:
@@ -78,19 +77,16 @@ def convert_one_emb_model_2_tf(emb_name, model, output_path, port):
     return
 
 
-from gensim.models import FastText
-
-
 if __name__ == "__main__":
     """
     Just run `python w2v_visualizer.py word2vec.model visualize_result`
     """
-    # try:
-    #     model_path = sys.argv[1]
-    #     output_path = sys.argv[2]
-    # except Exception as e:
-    #     print("Please provide model path and output path %s " % e)
+    try:
+        model_path = sys.argv[1]
+        output_path = sys.argv[2]
+    except Exception as e:
+        print("Please provide model path and output path %s " % e)
 
     # model = Word2Vec.load(model_path)
-    model = FastText.load_fasttext_format("H:/Vietnamese word representations/result/news.bin")
-    convert_one_emb_model_2_tf(emb_name='emb_name', model=model, output_path="H:/Vietnamese word representations/result/visualizer", port=8889)
+    model = gensim.models.KeyedVectors.load_word2vec_format(model_path, binary=True)
+    convert_one_emb_model_2_tf(model, output_path)
