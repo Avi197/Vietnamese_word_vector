@@ -15,7 +15,7 @@ E.g. :
 khử_trùng	sát_trùng	9.22
 news model: 0.8220183849334717
 fasttext_model: 0.6976749300956726
-
+</br>
 ban_mai	sớm_mai	9.0
 news model: 0.7367316484451294
 fasttext_model: 0.6704784631729126
