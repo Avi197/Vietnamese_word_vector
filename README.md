@@ -39,12 +39,8 @@ mệt_mỏi	mỏi_mệt	9.55<br/>
 0.8327637910842896<br/>
 
 
+<br/>
+#### Update
 
-
-
-
-
-
-
-Change tokenizer tool from VnCoreNLP to SentencePiece
+Change tokenizer tool from VnCoreNLP to SentencePiece<br/>
 Create analogy test data from most frequently appeared words
