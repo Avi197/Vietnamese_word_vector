@@ -6,9 +6,10 @@ using visim-400 data for similarity test
 calculate cosine similarity of word pair
 compare the cosine similarity to the [0,10] scale similarity of visim data
 
+Tokenized using VnCoreNlp
+
 opposite meaning words don't have ~ 0 cosine similarity, it stay around 0.4 ~ 0.5
 news model works better with similar words, word pairs that have similar meaning have much closer cosine similarity to [0,10] scale , but fasttext model has better score overall 
-
 
 
 E.g. :
@@ -36,3 +37,14 @@ khấp_khểnh	gập_ghềnh	9.12<br/>
 mệt_mỏi	mỏi_mệt	9.55<br/>
 0.8442257642745972<br/>
 0.8327637910842896<br/>
+
+
+
+
+
+
+
+
+
+Change tokenizer tool from VnCoreNLP to SentencePiece
+Create analogy test data from most frequently appeared words
