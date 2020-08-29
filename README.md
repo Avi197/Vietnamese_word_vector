@@ -1,6 +1,6 @@
 # Word_vector_github
 
-<b>remind myself to get list of high frequency words<b/>  
+<b>remind myself to get list of high frequency words  <b/>  
 
 Pre-processing scripts for news data
 
