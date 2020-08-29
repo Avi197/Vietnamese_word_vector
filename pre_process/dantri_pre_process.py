@@ -15,12 +15,13 @@ Dantri_data = file_path.Dantri_data
 """
 
 
-def get_tuoitre_vnexpress(infile):
+def get_dantri(infile):
     count_line = 1
 
     with jsonlines.open(infile) as file:
         with jsonlines.open(Dantri_data, 'w') as outfile:
             for obj in file:
+                
                 # condition here
                 outfile.write(obj)
                 print(f'done line {count_line}')
@@ -28,4 +29,4 @@ def get_tuoitre_vnexpress(infile):
             print(f'wrote to {Dantri_data}')
 
 
-get_tuoitre_vnexpress(Dantri_infile)
+get_dantri(Dantri_infile)

@@ -29,6 +29,9 @@ Tuoitre_text = 'H:/Vietnamese word representations/Word_vector_data/text data/tu
 Vnexpress_text = 'H:/Vietnamese word representations/Word_vector_data/text data/vnexpress_data'
 Vnn_text = 'H:/Vietnamese word representations/Word_vector_data/text data/vnn_data'
 Vtv_text = 'H:/Vietnamese word representations/Word_vector_data/text data/vtv_data'
+datafile = 'H:/Vietnamese word representations/Word_vector_data/text data/datafile_sentences.txt'
+datafile_tokenized = 'H:/Vietnamese word representations/Word_vector_data/text data/datafile_tokenized.txt'
+
 # ubuntu
 # Dantri_text = '/home/pham/NLU/text data/Dantri/dantri_data.json'
 # Thanhnien_text = '/home/pham/NLU/text data/Thanhnien/thanhnien_data.json'
@@ -42,17 +45,17 @@ Vtv_text = 'H:/Vietnamese word representations/Word_vector_data/text data/vtv_da
 # tokenized data
 # ---------
 # windows
-# Dantri_tokenized = 'H:/Vietnamese word representations/Word_vector_data/text data/Dantri/dantri_tokenized'
-# Thanhnien_tokenized = 'H:/Vietnamese word representations/Word_vector_data/text data/Thanhnien/thanhnien_tokenized'
-# Tuoitre_tokenized = 'H:/Vietnamese word representations/Word_vector_data/text data/Tuoitre/tuoitre_tokenized'
-# Vnexpress_tokenized = 'H:/Vietnamese word representations/Word_vector_data/text data/Vnexpress/vnexpress_tokenized'
-# Vnn_tokenized = 'H:/Vietnamese word representations/Word_vector_data/text data/Vnn/vnn_tokenized'
-# Vtv_tokenized = 'H:/Vietnamese word representations/Word_vector_data/text data/Vtv/vtv_tokenized'
+Dantri_tokenized = 'H:/Vietnamese word representations/Word_vector_data/text data/Dantri/dantri_tokenized'
+Thanhnien_tokenized = 'H:/Vietnamese word representations/Word_vector_data/text data/Thanhnien/thanhnien_tokenized'
+Tuoitre_tokenized = 'H:/Vietnamese word representations/Word_vector_data/text data/Tuoitre/tuoitre_tokenized'
+Vnexpress_tokenized = 'H:/Vietnamese word representations/Word_vector_data/text data/Vnexpress/vnexpress_tokenized'
+Vnn_tokenized = 'H:/Vietnamese word representations/Word_vector_data/text data/Vnn/vnn_tokenized'
+Vtv_tokenized = 'H:/Vietnamese word representations/Word_vector_data/text data/Vtv/vtv_tokenized'
 # ubuntu
-Dantri_tokenized = '/home/pham/NLU/text data/Dantri/dantri_tokenized.txt'
-Thanhnien_tokenized = '/home/pham/NLU/text data/Thanhnien/thanhnien_tokenized.txt'
-Tuoitre_tokenized = '/home/pham/NLU/text data/Tuoitre/tuoitre_tokenized.txt'
-Vnexpress_tokenized = '/home/pham/NLU/text data/Vnexpress/vnexpress_tokenized.txt'
-Vnn_tokenized = '/home/pham/NLU/text data/Vnn/vnn_tokenized.txt'
-Vtv_tokenized = '/home/pham/NLU/text data/Vtv/vtv_tokenized.txt'
+# Dantri_tokenized = '/home/pham/NLU/text data/Dantri/dantri_tokenized.txt'
+# Thanhnien_tokenized = '/home/pham/NLU/text data/Thanhnien/thanhnien_tokenized.txt'
+# Tuoitre_tokenized = '/home/pham/NLU/text data/Tuoitre/tuoitre_tokenized.txt'
+# Vnexpress_tokenized = '/home/pham/NLU/text data/Vnexpress/vnexpress_tokenized.txt'
+# Vnn_tokenized = '/home/pham/NLU/text data/Vnn/vnn_tokenized.txt'
+# Vtv_tokenized = '/home/pham/NLU/text data/Vtv/vtv_tokenized.txt'
 # ---------

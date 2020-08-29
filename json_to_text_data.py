@@ -1,7 +1,7 @@
 import jsonlines
 import os
-from Word_vector_github import file_path
-
+# from Word_vector_github import file_path
+import file_path
 
 Dantri_text = file_path.Dantri_text
 Tuoitre_text = file_path.Tuoitre_text
@@ -21,10 +21,11 @@ def get_train_data_vnn(infile, outfile):
     with jsonlines.open(infile) as file:
         with open(outfile, 'w', encoding='utf-8') as out:
             for obj in file:
-                out.write(obj['title'] + '\n')
-                out.write(obj['lead'] + '\n')
+                out.write(obj['title'].strip() + '\n')
+                out.write(obj['lead'].strip() + '\n')
                 for paragraph in obj['content']:
-                    out.write(paragraph + '\n')
+                    if paragraph:
+                        out.write(paragraph.strip() + '\n')
                 print('done line {0}'.format(count))
                 count += 1
 
@@ -39,15 +40,16 @@ def get_train_data(infile, outfile):
     with jsonlines.open(infile) as file:
         with open(outfile, 'w', encoding='utf-8') as out:
             for obj in file:
-                out.write(obj['title'] + '\n')
-                out.write(obj['description'] + '\n')
+                out.write(obj['title'].strip() + '\n')
+                out.write(obj['description'].strip() + '\n')
                 for paragraph in obj['content']:
-                    out.write(paragraph + '\n')
+                    if paragraph:
+                        out.write(paragraph.strip() + '\n')
                 print('done line {0}'.format(count))
                 count += 1
 
 
-get_train_data(file_path.Dantri, Dantri_text)
+# get_train_data(file_path.Dantri, Dantri_text)
 get_train_data(file_path.Thanhnien, Thanhnien_text)
 get_train_data(file_path.Tuoitre, Tuoitre_text)
 get_train_data(file_path.Vnexpress, Vnexpress_text)
