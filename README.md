@@ -14,6 +14,8 @@ Tokenized using VnCoreNlp
 opposite meaning words don't have ~ 0 cosine similarity, it stay around 0.4 ~ 0.5
 news model works better with similar words, word pairs that have similar meaning have much closer cosine similarity to [0,10] scale , but fasttext model has better score overall 
 
+Train using Fasttext with these parameter
+```-min 2 -max 5 -dim 200 -epoch 3```
 ```
 E.g. :  
 khử_trùng	sát_trùng	9.22  
