@@ -14,9 +14,11 @@ opposite meaning words don't have ~ 0 cosine similarity, it stay around 0.4 ~ 0.
 news model works better with similar words, word pairs that have similar meaning have much closer cosine similarity to [0,10] scale , but fasttext model has better score overall 
 
 Train using Fasttext with these parameter
-```-min 2 -max 5 -dim 200 -epoch 3```
+```-min 2 -max 5 -dim 200 -epoch 3```  
+
+
+#### Similarity test
 ```
-E.g. :  
 khử_trùng	sát_trùng	9.22  
 news model (1): 0.8220183849334717  
 fasttext_model (2): 0.6976749300956726  
@@ -40,6 +42,26 @@ khấp_khểnh	gập_ghềnh	9.12
 mệt_mỏi	mỏi_mệt	9.55  
 (1): 0.8442257642745972  
 (2): 0.8327637910842896  
+```
+
+#### Analogy test
+```
+("Hà_Nội","Việt_Nam", "Campuchia")   (0.6863046288490295, 'Phnom_Penh')
+
+("Tổng_bí_thư", "Nguyễn_Phú_Trọng", "Nguyễn_Xuân_Phúc")  (0.8964422345161438, 'Thủ_tướng')
+("Chủ_tịch","Hồ_Chí_Minh", "Nguyễn_Phú_Trọng")   (0.7754886150360107, 'Tổng_Bí_thư')
+
+("chậm", "nhanh", "cao") (0.7500340342521667, 'thấp')
+
+("đô_la","Mỹ", "Trung_Quốc") (0.7915549278259277, 'nhân_dân_tệ')
+("USD","Mỹ", "Trung_Quốc")   (0.8098106384277344, 'nhân_dân_tệ')
+
+("cô","chú", "anh")  (0.7152935266494751, 'chị')
+("dì","chú", "anh")  (0.7390031218528748, 'chị')
+
+("chạy_án","Con_ông_cháu_cha", "quan_liêu")
+[(0.6325034499168396, 'chạy_tội'), (0.6051946878433228, 'nhũng_nhiễu'), (0.6001415848731995, 'tham_nhũng'), (0.5994342565536499, 'tham_ô'), (0.5857940912246704, 'Quan_liêu')
+, (0.5827884674072266, 'nhũng_lạm'), (0.5800005197525024, 'rửa_tiền'), (0.5690904259681702, 'hối_lộ'), (0.5688171982765198, 'tư_pháp'), (0.5666439533233643, 'tố_tụng')]
 ```
 
 
