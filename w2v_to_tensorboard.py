@@ -41,7 +41,8 @@ def convert_one_emb_model_2_tf(emb_name, model, output_path, port):
     meta_file = "%s.tsv"%emb_name
     placeholder = np.zeros((len(model.wv.index2word), model.vector_size))
 
-    with open(os.path.join(output_path, meta_file), 'wb') as file_metadata:
+    # with open(os.path.join(output_path, meta_file), 'wb') as file_metadata:
+    with open(f'{output_path}/{meta_file}', 'wb') as file_metadata:
         for i, word in enumerate(model.wv.index2word):
             placeholder[i] = model[word]
             # temporary solution for https://github.com/tensorflow/tensorflow/issues/9094
@@ -80,6 +81,10 @@ def convert_one_emb_model_2_tf(emb_name, model, output_path, port):
 
 from gensim.models import FastText
 
+model1 = "H:/Vietnamese word representations/Word_vector_data/VnNewsWord2Vec/VnNewsWord2Vec.bin"
+model2 = "H:/Vietnamese word representations/result/news.bin"
+
+output = "H:/Vietnamese word representations/result/visualizer"
 
 if __name__ == "__main__":
     """
@@ -92,5 +97,5 @@ if __name__ == "__main__":
     #     print("Please provide model path and output path %s " % e)
 
     # model = Word2Vec.load(model_path)
-    model = FastText.load_fasttext_format("H:/Vietnamese word representations/result/news.bin")
-    convert_one_emb_model_2_tf(emb_name='emb_name', model=model, output_path="H:/Vietnamese word representations/result/visualizer", port=8889)
+    model = FastText.load_fasttext_format(model1)
+    convert_one_emb_model_2_tf(emb_name='vn_vec', model=model, output_path=output, port=8889)

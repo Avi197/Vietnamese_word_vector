@@ -32,6 +32,7 @@ Vtv_text = 'H:/Vietnamese word representations/Word_vector_data/text data/vtv_da
 datafile = 'H:/Vietnamese word representations/Word_vector_data/text data/datafile_sentences.txt'
 datafile_tokenized = 'H:/Vietnamese word representations/Word_vector_data/text data/datafile_tokenized.txt'
 
+
 # ubuntu
 # Dantri_text = '/home/pham/NLU/text data/Dantri/dantri_data.json'
 # Thanhnien_text = '/home/pham/NLU/text data/Thanhnien/thanhnien_data.json'
