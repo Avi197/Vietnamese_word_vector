@@ -3,35 +3,35 @@ import tensorflow as tf
 import numpy as np
 import os
 
-meta_file = "g2x_metadata.tsv"
+meta_file = "./projections/g2x_metadata.tsv"
 output_path = "./projections"
+"H:/Vietnamese word representations/Word2Vec models/v0.3/VnNewsWord2Vec_v0.3.vec"
+new_path = "H:/Vietnamese word representations/Word_vector_data/VnNewsWord2Vec/VnNewsWord2Vec.vec"
+old_path = "H:/Vietnamese word representations/Word2Vec models/v0.3/VnNewsWord2Vec_v0.3.vec"
 
-
-path = "H:/Vietnamese word representations/Word_vector_data/VnNewsWord2Vec/VnNewsWord2Vec.vec"
 # read embedding file into list and get the size
-with open(path, 'r', encoding='utf-8') as embedding_file:
+with open(old_path, 'r', encoding='utf-8') as embedding_file:
     embedding_content = embedding_file.readlines()
     embedding_content = [x.strip() for x in embedding_content]
 
-    num_lines = len(embedding_content) - 1 # skip the header
-    num_dims = len(embedding_content[1].split()) - 1 # -1 because of the label column
+    num_lines = len(embedding_content) - 1  # skip the header
+    num_dims = len(embedding_content[1].split()) - 1  # -1 because of the label column
     print("Detected dimensions:", num_lines, " X ", num_dims)
 
     placeholder = np.zeros((num_lines, num_dims))
 
     print(placeholder.shape)
 
-
     z = 0
-    with open(os.path.join(output_path, meta_file), 'w', encoding='utf-8') as file_metadata:
+    with open(meta_file, 'w', encoding='utf-8') as file_metadata:
 
         i = 0
         for line in embedding_content[1:]:  # skip the header line
             values = line.split()
             raw_label = values[0]
-            #print(label)
+            # print(label)
             col = 0
-            for val in values[1:]: # skip the label
+            for val in values[1:]:  # skip the label
                 placeholder[i][col] = val
                 z = i + col
                 col = col + 1

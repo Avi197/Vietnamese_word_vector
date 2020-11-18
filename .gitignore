@@ -1,0 +1,7 @@
+
+*.tsv
+visualizer/runs - full/Nov04_15-03-42_pham-VirtualBox/events.out.tfevents.1604477022.pham-VirtualBox.2085.0
+visualizer/runs - full/Nov04_15-03-42_pham-VirtualBox/projector_config - Copy.pbtxt
+visualizer/runs - full/Nov04_15-03-42_pham-VirtualBox/projector_config.pbtxt
+visualizer/runs/Nov04_15-03-42_pham-VirtualBox/events.out.tfevents.1604477022.pham-VirtualBox.2085.0
+visualizer/runs/Nov04_15-03-42_pham-VirtualBox/projector_config.pbtxt
