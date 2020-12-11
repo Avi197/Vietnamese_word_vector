@@ -49,6 +49,7 @@ def tokenized_file(infile, outfile):
 #         ifor_val = something_else
 #     df.at[i,'ifor'] = ifor_val
 
+
 tokenized_file(dummy, datafile_tokenized)
 
 # tokenized(file_path.Tuoitre_text, file_path.Tuoitre_tokenized)
