@@ -90,12 +90,6 @@ if __name__ == "__main__":
     """
     Just run `python w2v_visualizer.py word2vec.model visualize_result`
     """
-    # try:
-    #     model_path = sys.argv[1]
-    #     output_path = sys.argv[2]
-    # except Exception as e:
-    #     print("Please provide model path and output path %s " % e)
 
-    # model = Word2Vec.load(model_path)
     model = FastText.load_fasttext_format(model1)
     convert_one_emb_model_2_tf(emb_name='vn_vec', model=model, output_path=output, port=8889)
