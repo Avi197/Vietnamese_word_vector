@@ -1,9 +1,5 @@
 # Word_vector_github
 
-remind myself to get list of high frequency words  
-Pre-processing scripts for news data
-
-
 using visim-400 data for similarity test
 calculate cosine similarity of word pair
 compare the cosine similarity to the [0,10] scale similarity of visim data
@@ -101,11 +97,4 @@ SentencePiece:
 SentencePiece work much better if use --split_by_whitespace=false, ignore whitespace and go for high frequency characters/words, and give interesting result
 ```
 ['▁Sở▁Y▁tế▁TP', '▁Hà▁Nội', '▁vừa', '▁thông▁tin', '▁trường▁hợp', '▁mắc', '▁SARS', '-', 'CoV', '-2', '▁mới', ',', '▁từng', '▁ở', '▁cùng', '▁phòng', '▁với', '▁bệnh▁nhân', '▁10', '34', '▁cách▁ly', '▁tại', '▁Hải▁Dương', '▁về', '▁TP▁Hà▁Nội', '▁sau', '▁14', '▁ngày', '▁cách▁ly', '.']
-```
-
-
-## ???
-```
-model still contain token with white-space  
-WHY ???
 ```
