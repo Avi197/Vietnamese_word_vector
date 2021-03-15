@@ -1,4 +1,4 @@
-# Word_vector_github
+# Vietnamese Word Vector
 
 The problem with Vietnamese words are there a lot of compound words, unlike English, mostly contain a single word with meaning, Vietnamese words are usually made up of 2 or 3, sometime more smaller word.
 
