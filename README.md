@@ -13,7 +13,7 @@ Train using Fasttext with these parameter
 ```-min 2 -max 5 -dim 200 -epoch 3```  
 
 
-#### Similarity test
+### Similarity test
 Using Visim dataset to test similarity of pair words
 
 word_1  word_2  score/1 (2 similar meaning word will have score closer to 1)
@@ -44,8 +44,9 @@ mệt_mỏi	mỏi_mệt	0.955
 (1): 0.8442257642745972  
 (2): 0.8327637910842896  
 ```
+Will add the full list of word pairs later
 
-#### Analogy test
+### Analogy test
 
 A proportional analogy holds between two word pairs: a:a* :: b:b* (a is to a* as b is to b*) For example, Tokyo is to Japan as Paris is to France.\
 With the pair-based methods, given a:a* :: b:?, the task is to find b*.\
@@ -72,14 +73,14 @@ Analogy score closer to 1 is better
 , (0.5827884674072266, 'nhũng_lạm'), (0.5800005197525024, 'rửa_tiền'), (0.5690904259681702, 'hối_lộ'), (0.5688171982765198, 'tư_pháp'), (0.5666439533233643, 'tố_tụng')]
 ```
 
+Will add more test later
 
-##### SentencePiece tokenizer vs VnCoreNLP
+### SentencePiece tokenizer vs VnCoreNLP
 
 ```
 Input
 'Sở Y tế TP Hà Nội vừa thông tin trường hợp mắc SARS-CoV-2 mới, từng ở cùng phòng với bệnh nhân 1034 cách ly tại Hải Dương về TP Hà Nội sau 14 ngày cách ly.'
-```
-```
+
 VnCoreNLP
 ['Sở', 'Y_tế', 'TP', 'Hà_Nội', 'vừa', 'thông_tin', 'trường_hợp', 'mắc', 'SARS-CoV', '-2', 'mới', 'từng', 'ở', 'cùng', 'phòng', 'với', 'bệnh_nhân', '1034', 'cách_ly', 'tại', 'Hải_Dương', 'về', 'TP', 'Hà_Nội', 'sau', '14', 'ngày', 'cách_ly', '.']
 
