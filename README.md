@@ -22,9 +22,9 @@ Train using Fasttext with these parameter
 Using Visim dataset to test similarity of pair words calculate cosine similarity of word pair compare the cosine similarity to the [0,10] scale similarity of visim data
 
 
-word_1  word_2  score/1 (2 similar meaning word will have score closer to 1)
-news model (1): this model trained using Vietnamese news
-fasttext_model (2): the model trained by Mikolov using wiki
+word_1  word_2  score/1 (2 similar meaning word will have score closer to 1)\
+news model (1): this model trained using Vietnamese news\
+fasttext_model (2): the model trained by Mikolov using wiki\
 ```
 khử_trùng	sát_trùng	0.922  
 news model (1): 0.8220183849334717  
