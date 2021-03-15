@@ -1,12 +1,17 @@
 # Word_vector_github
 
-using visim-400 data for similarity test
-calculate cosine similarity of word pair
-compare the cosine similarity to the [0,10] scale similarity of visim data
+The problem with Vietnamese words are there a lot of compound words, unlike English, mostly contain a single word with meaning, Vietnamese words are usually made up of 2 or 3, sometime more smaller word.
 
-Tokenized using VnCoreNlp
+For example:
+Computer = Máy tính
 
-opposite meaning words don't have ~ 0 cosine similarity, it stay around 0.4 ~ 0.5
+Computer in Vietnamese is 2 word: "máy" and "tính"
+
+So we can't just straight up using the same style as English to train a Word vector, we need to preprocess it first
+
+
+opposite meaning words don't have ~ 0 cosine similarity, it stay around 0.4 ~ 0.5 because word2vec model only train with context, so even though 2 word have 2 completelyl different meaning but in the same context, word2vec might not be able to differentiate the two
+
 news model works better with similar words, word pairs that have similar meaning have much closer cosine similarity to [0,10] scale , but fasttext model has better score overall 
 
 Train using Fasttext with these parameter
@@ -14,7 +19,8 @@ Train using Fasttext with these parameter
 
 
 ### Similarity test
-Using Visim dataset to test similarity of pair words
+Using Visim dataset to test similarity of pair words calculate cosine similarity of word pair compare the cosine similarity to the [0,10] scale similarity of visim data
+
 
 word_1  word_2  score/1 (2 similar meaning word will have score closer to 1)
 news model (1): this model trained using Vietnamese news
