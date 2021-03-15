@@ -3,24 +3,37 @@
 The problem with Vietnamese words are there a lot of compound words, unlike English, mostly contain a single word with meaning, Vietnamese words are usually made up of 2 or 3, sometime more smaller word.
 
 For example:
-Computer = Máy tính
-
-Computer in Vietnamese is 2 word: "máy" and "tính"
-
+Computer = Máy tính\
+Computer in Vietnamese is 2 word: "máy" and "tính"\
 So we can't just straight up using the same style as English to train a Word vector, we need to preprocess it first
 
+##### Note:
+Opposite meaning words don't have ~ 0 cosine similarity, it stay around 0.4 ~ 0.5 because word2vec model only train with context, so even though 2 word have 2 completelyl different meaning but in the same context, word2vec might not be able to differentiate the two
 
-opposite meaning words don't have ~ 0 cosine similarity, it stay around 0.4 ~ 0.5 because word2vec model only train with context, so even though 2 word have 2 completelyl different meaning but in the same context, word2vec might not be able to differentiate the two
+News model works better with similar words, word pairs that have similar meaning have much closer cosine similarity to [0,10] scale , but fasttext model has better score overall 
 
-news model works better with similar words, word pairs that have similar meaning have much closer cosine similarity to [0,10] scale , but fasttext model has better score overall 
 
-Train using Fasttext with these parameter
-```-min 2 -max 5 -dim 200 -epoch 3```  
+### SentencePiece tokenizer vs VnCoreNLP
+This is what need to preprocess the corpus, turn compound words into a single token for training\
+All coumpound words will have whitespace " " replaced by  "_"
+
+
+```
+Input
+'Sở Y tế TP Hà Nội vừa thông tin trường hợp mắc SARS-CoV-2 mới, từng ở cùng phòng với bệnh nhân 1034 cách ly tại Hải Dương về TP Hà Nội sau 14 ngày cách ly.'
+
+VnCoreNLP
+['Sở', 'Y_tế', 'TP', 'Hà_Nội', 'vừa', 'thông_tin', 'trường_hợp', 'mắc', 'SARS-CoV', '-2', 'mới', 'từng', 'ở', 'cùng', 'phòng', 'với', 'bệnh_nhân', '1034', 'cách_ly', 'tại', 'Hải_Dương', 'về', 'TP', 'Hà_Nội', 'sau', '14', 'ngày', 'cách_ly', '.']
+
+
+SentencePiece:
+['▁Sở▁Y▁tế▁TP', '▁Hà▁Nội', '▁vừa', '▁thông▁tin', '▁trường▁hợp', '▁mắc', '▁SARS', '-', 'CoV', '-2', '▁mới', ',', '▁từng', '▁ở', '▁cùng', '▁phòng', '▁với', '▁bệnh▁nhân', '▁10', '34', '▁cách▁ly', '▁tại', '▁Hải▁Dương', '▁về', '▁TP▁Hà▁Nội', '▁sau', '▁14', '▁ngày', '▁cách▁ly', '.']  
+```
 
 
 ### Similarity test
-Using Visim dataset to test similarity of pair words calculate cosine similarity of word pair compare the cosine similarity to the [0,10] scale similarity of visim data
-
+Using Visim dataset to test similarity of pair words calculate cosine similarity of word pair compare the cosine similarity to the [0,10] scale similarity of visim data\
+Visim [0,10] scale will be convert to [0,1] for easier comparison
 
 word_1  word_2  score/1 (2 similar meaning word will have score closer to 1)\
 news model (1): this model trained using Vietnamese news\
@@ -80,17 +93,3 @@ Analogy score closer to 1 is better
 ```
 
 Will add more test later
-
-### SentencePiece tokenizer vs VnCoreNLP
-
-```
-Input
-'Sở Y tế TP Hà Nội vừa thông tin trường hợp mắc SARS-CoV-2 mới, từng ở cùng phòng với bệnh nhân 1034 cách ly tại Hải Dương về TP Hà Nội sau 14 ngày cách ly.'
-
-VnCoreNLP
-['Sở', 'Y_tế', 'TP', 'Hà_Nội', 'vừa', 'thông_tin', 'trường_hợp', 'mắc', 'SARS-CoV', '-2', 'mới', 'từng', 'ở', 'cùng', 'phòng', 'với', 'bệnh_nhân', '1034', 'cách_ly', 'tại', 'Hải_Dương', 'về', 'TP', 'Hà_Nội', 'sau', '14', 'ngày', 'cách_ly', '.']
-
-
-SentencePiece:
-['▁Sở▁Y▁tế▁TP', '▁Hà▁Nội', '▁vừa', '▁thông▁tin', '▁trường▁hợp', '▁mắc', '▁SARS', '-', 'CoV', '-2', '▁mới', ',', '▁từng', '▁ở', '▁cùng', '▁phòng', '▁với', '▁bệnh▁nhân', '▁10', '34', '▁cách▁ly', '▁tại', '▁Hải▁Dương', '▁về', '▁TP▁Hà▁Nội', '▁sau', '▁14', '▁ngày', '▁cách▁ly', '.']  
-```
