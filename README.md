@@ -17,9 +17,9 @@ News model works better with similar words, word pairs that have similar meaning
 This is what need to preprocess the corpus, turn compound words into a single token for training\
 All coumpound words will have whitespace " " replaced by  "_"
 
-We have 2 ways to pre-process:
-1 is VnCoreNLP: https://github.com/vncorenlp/VnCoreNLP
-2 is modified version of SentencePiece for Vietnamese: https://github.com/google/sentencepiece
+We have 2 ways to pre-process:\
+1 is [VnCoreNLP](https://github.com/vncorenlp/VnCoreNLP)\
+2 is modified version of SentencePiece for Vietnamese: [SentencePiece](https://github.com/google/sentencepiece)\
 Result comparison show below
 
 ```
