@@ -42,7 +42,7 @@ Visim [0,10] scale will be convert to [0,1] for easier comparison
 
 word_1  word_2  score/1 (2 similar meaning word will have score closer to 1)\
 news model (1): this model trained using Vietnamese news\
-fasttext_model (2): the model trained by Mikolov using wiki\
+fasttext_model (2): the model trained by Mikolov using wiki
 ```
 khử_trùng	sát_trùng	0.922  
 news model (1): 0.8220183849334717  
@@ -74,7 +74,7 @@ Will add the full list of word pairs later
 
 A proportional analogy holds between two word pairs: a:a* :: b:b* (a is to a* as b is to b*) For example, Tokyo is to Japan as Paris is to France.\
 With the pair-based methods, given a:a* :: b:?, the task is to find b*.\
-With set-based methods, the task is to find b* given a set of other pairs (excluding b:b*) that hold the same relation as b:b*.\
+With set-based methods, the task is to find b* given a set of other pairs (excluding b:b*) that hold the same relation as b:b*.
 
 Analogy score closer to 1 is better
 
