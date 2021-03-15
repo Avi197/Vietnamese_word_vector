@@ -93,3 +93,13 @@ Analogy score closer to 1 is better
 ```
 
 Will add more test later
+
+### Tensorboard projection
+Visualize 25000 most frequently appear in news corpus
+
+##### All data point
+![Thu_tuong](https://github.com/Avi197/Vietnamese_word_vector/blob/master/Tensorboard/all_data_point.jpg)
+
+##### 10 data point
+![Thu_tuong](https://github.com/Avi197/Vietnamese_word_vector/blob/master/Tensorboard/10_data_point.jpg)
+
