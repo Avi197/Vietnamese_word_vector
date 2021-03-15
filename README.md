@@ -17,10 +17,13 @@ News model works better with similar words, word pairs that have similar meaning
 This is what need to preprocess the corpus, turn compound words into a single token for training\
 All coumpound words will have whitespace " " replaced by  "_"
 
+We have 2 ways to pre-process, 1 is use VnCoreNLP, 2 is use modified version of SentencePiece for Vietnamese\
+Result show below
 
 ```
 Input
 'Sở Y tế TP Hà Nội vừa thông tin trường hợp mắc SARS-CoV-2 mới, từng ở cùng phòng với bệnh nhân 1034 cách ly tại Hải Dương về TP Hà Nội sau 14 ngày cách ly.'
+
 
 VnCoreNLP
 ['Sở', 'Y_tế', 'TP', 'Hà_Nội', 'vừa', 'thông_tin', 'trường_hợp', 'mắc', 'SARS-CoV', '-2', 'mới', 'từng', 'ở', 'cùng', 'phòng', 'với', 'bệnh_nhân', '1034', 'cách_ly', 'tại', 'Hải_Dương', 'về', 'TP', 'Hà_Nội', 'sau', '14', 'ngày', 'cách_ly', '.']
