@@ -1,3 +1,6 @@
+# Word2vec model and tensorboard
+https://drive.google.com/drive/folders/16EVc2lYJRbewHEfW8f9mYz_G6sI0pF00?usp=sharing
+
 # Vietnamese Word Vector
 
 The problem with Vietnamese words are there a lot of compound words, unlike English, mostly contain a single word with meaning, Vietnamese words are usually made up of 2 or 3, sometime more smaller word.
